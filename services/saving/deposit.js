@@ -15,7 +15,7 @@ const deposit = async (event) => {
     try {
         savingAccount = await getSavingAccount(userId);
         if (!savingAccount) {
-            savingAccount = await createSavingAccount(userId, amount);
+            savingAccount = await createSavingAccount(userId, 0);
         }
     } catch (error) {
         console.log(error);
