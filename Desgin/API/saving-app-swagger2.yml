@@ -1,0 +1,106 @@
+openapi: 3.0.0
+info:
+  title: SavingApp
+  version: 1.0.0
+servers:
+  - url: http://{{host}}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /user/logout:
+    post:
+      tags:
+        - General
+      summary: Logout
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                AccessToken: >-
+                  eyJraWQiOiJOdDZxZG9SWnA3K0lOMTZrZ0d4QXFuVEpRM0VBMTJaWDVoaDdOOUgrN0VZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4MmNiMzA0ZS02ZmJmLTQxYTgtOGQ2Zi0zMTdmZTJiMjRmNGQiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTFfTENtY2d5NjFoIiwiY2xpZW50X2lkIjoiMWMzN2RwazcyZXRrbnRjc2ZtcmR1Z3NyczUiLCJvcmlnaW5fanRpIjoiNWE1YTA0YzctZTk0ZC00NWEyLWE3NGQtYzQ4YWM4ZTFjYTJmIiwiZXZlbnRfaWQiOiJkYWVkYWNlNy0wYmZlLTQyZDUtOGNkMy03NzQxMmM1NTU3NTciLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjU0MjIwMDIwLCJleHAiOjE2NTQyMzgwMjAsImlhdCI6MTY1NDIyMDAyMCwianRpIjoiMGQ3ZDMxMjUtZGJhNC00ZDg4LWFkNTAtNTFkNDc0YWZlYjRhIiwidXNlcm5hbWUiOiJ0ZXN0MkBnbWFpbC5jb20ifQ.jtdldumJlWTjBDWSwAEXs8qa1ukk2qwHcIGFyRakhCwi9cLX9GdF_AlbN1uCkqYmkYkgt4uIa8X9wH7Oj9us5wjIM6EzW-6Ute7YgGfpaRDtqfYRfhH-cG6R5I0pXw2o-mazpLIF6qJJJRHJtS5ytiZV9rdw60hkKFQRUGs3v4VaCrZhATB27DylCzYJH6AxMfEiGElYgS6yY9fE6Wbi85QVAySDHYpPZAiOJxjZQzUnZW0xUsZ24XoUj6kzK-0EiVR6d-8lqAOUec7ZHzSpz1N2y6wTq7YMxMYDpqI3FRM-ijgeFkeisHNXH1F8e-S_0lw7wSoZ2a-Y0zxOt-PWNw
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/login:
+    post:
+      tags:
+        - General
+      summary: Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: test3@gmail.com
+                password: '123456'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/signup:
+    post:
+      tags:
+        - General
+      summary: Signup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: test5@gmail.com
+                password: '123456'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /saving/deposit:
+    post:
+      tags:
+        - General
+      summary: Deposit
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                amount: 1000
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /saving/withdraw:
+    post:
+      tags:
+        - General
+      summary: Withdraw
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                amount: 1000
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

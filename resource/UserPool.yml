@@ -1,0 +1,11 @@
+Type: AWS::Cognito::UserPool
+Properties:
+  UserPoolName: UserServicePool
+  Schema:
+    - Name: email
+      Required: true
+      Mutable: true
+  Policies:
+      PasswordPolicy:
+        MinimumLength: 6
+  AutoVerifiedAttributes: ["email"]

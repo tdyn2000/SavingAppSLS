@@ -1,0 +1,9 @@
+Type: AWS::Cognito::UserPoolClient
+Properties:
+  UserPoolId: 
+    Ref: "UserPool"
+  ClientName: InfinaTestApp
+  AccessTokenValidity: 5 
+  ExplicitAuthFlows:
+    - "ADMIN_NO_SRP_AUTH"
+  IdTokenValidity: 5

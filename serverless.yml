@@ -1,0 +1,85 @@
+service: infina-test
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-bundle
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: 'ap-southeast-1'
+  memorySize: 256
+  environment:
+    USER_POOL_ID: { Ref: UserPool }
+    CLIENT_ID: { Ref: UserClient }
+    SAVING_TABLE: ${self:custom.SavingTable.name}
+  iam:
+    role: TestLambdaRole
+
+functions:
+  loginUser:
+    handler: services/user/login.handler
+    events:
+      - http:
+          path: user/login
+          method: post
+          cors: true
+  signupUser:
+    handler: services/user/signup.handler
+    events:
+      - http:
+          path: user/signup
+          method: post
+          cors: true
+  logoutUser:
+    handler: services/user/logout.handler
+    events:
+      - http:
+          path: user/logout
+          method: post
+          cors: true
+          authorizer: 
+             type: COGNITO_USER_POOLS
+             authorizerId: 
+               Ref: ApiGatewayAuthorizer
+  deposit:
+    handler: services/saving/deposit.handler
+    events:
+      - http:
+          path: saving/deposit
+          method: post
+          cors: true  
+          authorizer: 
+             type: COGNITO_USER_POOLS
+             authorizerId: 
+               Ref: ApiGatewayAuthorizer
+
+  withdraw:
+    handler: services/saving/withdraw.handler
+    events:
+      - http:
+          path: saving/withdraw
+          method: post
+          cors: true   
+          authorizer: 
+             type: COGNITO_USER_POOLS
+             authorizerId: 
+               Ref: ApiGatewayAuthorizer
+  processInterest:
+    handler: services/saving/processInterest.handler
+    events:
+      - schedule: cron(59 23 * * ? *)
+
+resources:
+    Resources:
+      TestLambdaRole: ${file(./resource/LambdaRole.yml)}
+      UserPool: ${file(./resource/UserPool.yml)}
+      UserClient: ${file(./resource/UserClientApp.yml)}
+      SavingDynamoDBTable: ${file(./resource/SavingDynamoDBTable.yml)}
+      ApiGatewayAuthorizer:  ${file(./resource/ApiGatewayAuthorizer.yml)}
+
+custom:
+    SavingTable:
+      name: !Ref SavingDynamoDBTable
+      arn: !GetAtt SavingDynamoDBTable.Arn

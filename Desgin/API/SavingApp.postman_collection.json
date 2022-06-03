@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "6faed428-c44a-4ec0-be64-07486ee79bca",
+		"name": "SavingApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI1djVzRVhMcG1CazZ6SjJzTmlmVHFYN2ttZ0lKMWN2a3ZwU3pXZ1wvK3ZZOD0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4MmNiMzA0ZS02ZmJmLTQxYTgtOGQ2Zi0zMTdmZTJiMjRmNGQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX0xDbWNneTYxaCIsImNvZ25pdG86dXNlcm5hbWUiOiJ0ZXN0MkBnbWFpbC5jb20iLCJvcmlnaW5fanRpIjoiNWE1YTA0YzctZTk0ZC00NWEyLWE3NGQtYzQ4YWM4ZTFjYTJmIiwiYXVkIjoiMWMzN2RwazcyZXRrbnRjc2ZtcmR1Z3NyczUiLCJldmVudF9pZCI6ImRhZWRhY2U3LTBiZmUtNDJkNS04Y2QzLTc3NDEyYzU1NTc1NyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjU0MjIwMDIwLCJleHAiOjE2NTQyMzgwMjAsImlhdCI6MTY1NDIyMDAyMCwianRpIjoiYjk4ODFiYjYtMTIyZS00MTI4LTlmMDUtZDQyZDdjYjU4NmExIiwiZW1haWwiOiJ0ZXN0MkBnbWFpbC5jb20ifQ.gyLazihTM0Xh0fH5uNUOQrM0jBvvaDH--mTNhvWG366OiBKygBCMlCbj32Ge9fN9w--QZPnW-XCs47tfTi3Fp3_rwwx-FAjRDGc-XulKWT-dZwF-gTQp29Icvmxuruyi_C2m27HS0u6kuvkTIOYCgiWu4NDKXTF-TuDpQ77SWCBpRlhL7ZOwCiLpl3Sefhcwxr-MFpe8aFf-rl1wpDnLtKCVzinNVgQNv0wzi1Ldcp7tlxnF_VmrQBMiXG3AixM_SkRqc_ns747KpSfD56cnT-3OkzPsu4pPvEkQmJwHgz6fbrV3PAEKSoB2R9WAalI3HhHlUcxiW89POZaCj3_EoQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"AccessToken\": \"eyJraWQiOiJOdDZxZG9SWnA3K0lOMTZrZ0d4QXFuVEpRM0VBMTJaWDVoaDdOOUgrN0VZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4MmNiMzA0ZS02ZmJmLTQxYTgtOGQ2Zi0zMTdmZTJiMjRmNGQiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTFfTENtY2d5NjFoIiwiY2xpZW50X2lkIjoiMWMzN2RwazcyZXRrbnRjc2ZtcmR1Z3NyczUiLCJvcmlnaW5fanRpIjoiNWE1YTA0YzctZTk0ZC00NWEyLWE3NGQtYzQ4YWM4ZTFjYTJmIiwiZXZlbnRfaWQiOiJkYWVkYWNlNy0wYmZlLTQyZDUtOGNkMy03NzQxMmM1NTU3NTciLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjU0MjIwMDIwLCJleHAiOjE2NTQyMzgwMjAsImlhdCI6MTY1NDIyMDAyMCwianRpIjoiMGQ3ZDMxMjUtZGJhNC00ZDg4LWFkNTAtNTFkNDc0YWZlYjRhIiwidXNlcm5hbWUiOiJ0ZXN0MkBnbWFpbC5jb20ifQ.jtdldumJlWTjBDWSwAEXs8qa1ukk2qwHcIGFyRakhCwi9cLX9GdF_AlbN1uCkqYmkYkgt4uIa8X9wH7Oj9us5wjIM6EzW-6Ute7YgGfpaRDtqfYRfhH-cG6R5I0pXw2o-mazpLIF6qJJJRHJtS5ytiZV9rdw60hkKFQRUGs3v4VaCrZhATB27DylCzYJH6AxMfEiGElYgS6yY9fE6Wbi85QVAySDHYpPZAiOJxjZQzUnZW0xUsZ24XoUj6kzK-0EiVR6d-8lqAOUec7ZHzSpz1N2y6wTq7YMxMYDpqI3FRM-ijgeFkeisHNXH1F8e-S_0lw7wSoZ2a-Y0zxOt-PWNw\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/user/logout",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test3@gmail.com\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/user/login",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test5@gmail.com\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/user/signup",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI1djVzRVhMcG1CazZ6SjJzTmlmVHFYN2ttZ0lKMWN2a3ZwU3pXZ1wvK3ZZOD0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1OWM4NTk0Ni01Yzc5LTRkN2YtYmJmMi00MWZjNjEzZjBlMzkiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX0xDbWNneTYxaCIsImNvZ25pdG86dXNlcm5hbWUiOiJ0ZXN0M0BnbWFpbC5jb20iLCJvcmlnaW5fanRpIjoiOTNmMzQ3YzctYTQ1ZC00NTE1LWFhNDMtZGJhMTFmYWJiZjNiIiwiYXVkIjoiMWMzN2RwazcyZXRrbnRjc2ZtcmR1Z3NyczUiLCJldmVudF9pZCI6IjFkYTE4NDlmLWY2ODQtNDI2ZC1iNjc5LWM4YWNjNmYzMGVlZCIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjU0MjIwMDY1LCJleHAiOjE2NTQyMzgwNjUsImlhdCI6MTY1NDIyMDA2NSwianRpIjoiNmNjOTZkOWMtYWVmYi00MDM4LWFiNzctZDJmMGMwNWNkY2RkIiwiZW1haWwiOiJ0ZXN0M0BnbWFpbC5jb20ifQ.ewg66KXbdvNvIkCeIy8DhekADaySCZkCzd1jPUkZpt8dGTqDvh3kKUBQmrKNgtPFs06F6uWs_J-Yw4XxjBhvvY4yTjM2KwoMJnJlWL1WsNsKrM8uIAV--SYK8A-hhMuEH6hUfRKy9NazkCHmOTf5TcnUTC77M-SGGMRRwHWWRitUM3asH1ilmh64P97mpnChxVNptOPoljAmyK56g-et-ibQElUD72-PmRkUpzARmL_Mvx7fL3eypDOdDLAn_khRzRZZopYSwGxI4azLYmJlq4ZHKVtYo9sLoA1jp4V3yNsstIihC4iWUbya9VJCKQEc2TZDPKkntuf3Hiin_XfwtQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\":1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/saving/deposit",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"saving",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI1djVzRVhMcG1CazZ6SjJzTmlmVHFYN2ttZ0lKMWN2a3ZwU3pXZ1wvK3ZZOD0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1OWM4NTk0Ni01Yzc5LTRkN2YtYmJmMi00MWZjNjEzZjBlMzkiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLXNvdXRoZWFzdC0xX0xDbWNneTYxaCIsImNvZ25pdG86dXNlcm5hbWUiOiJ0ZXN0M0BnbWFpbC5jb20iLCJvcmlnaW5fanRpIjoiOTNmMzQ3YzctYTQ1ZC00NTE1LWFhNDMtZGJhMTFmYWJiZjNiIiwiYXVkIjoiMWMzN2RwazcyZXRrbnRjc2ZtcmR1Z3NyczUiLCJldmVudF9pZCI6IjFkYTE4NDlmLWY2ODQtNDI2ZC1iNjc5LWM4YWNjNmYzMGVlZCIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjU0MjIwMDY1LCJleHAiOjE2NTQyMzgwNjUsImlhdCI6MTY1NDIyMDA2NSwianRpIjoiNmNjOTZkOWMtYWVmYi00MDM4LWFiNzctZDJmMGMwNWNkY2RkIiwiZW1haWwiOiJ0ZXN0M0BnbWFpbC5jb20ifQ.ewg66KXbdvNvIkCeIy8DhekADaySCZkCzd1jPUkZpt8dGTqDvh3kKUBQmrKNgtPFs06F6uWs_J-Yw4XxjBhvvY4yTjM2KwoMJnJlWL1WsNsKrM8uIAV--SYK8A-hhMuEH6hUfRKy9NazkCHmOTf5TcnUTC77M-SGGMRRwHWWRitUM3asH1ilmh64P97mpnChxVNptOPoljAmyK56g-et-ibQElUD72-PmRkUpzARmL_Mvx7fL3eypDOdDLAn_khRzRZZopYSwGxI4azLYmJlq4ZHKVtYo9sLoA1jp4V3yNsstIihC4iWUbya9VJCKQEc2TZDPKkntuf3Hiin_XfwtQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\":1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/saving/withdraw",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"saving",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
