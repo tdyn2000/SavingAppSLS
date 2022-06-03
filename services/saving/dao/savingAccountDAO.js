@@ -28,7 +28,7 @@ export const getSavingAccount = async (userId) => {
         },
     };
     const result = await dynamoDB.query(params).promise();
-    if (result.Items.length < 0) {
+    if (result.Items.length < 1) {
         return null;
     }
     return result.Items[0];
